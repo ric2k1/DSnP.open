@@ -1,0 +1,8 @@
+_hw2/*.o
+_hw2/Homework_2.*
+_hw2/Makefile
+_hw2/cmdParser.h
+_hw2/cmdReader.o.*
+_hw2/cmdReader
+_hw2/main.cpp
+_hw2/testAsc*

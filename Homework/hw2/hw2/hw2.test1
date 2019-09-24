@@ -1,0 +1,131 @@
+====
+Note
+====
+- $: cursor position
+- <key>(number) : <functional key> (repeated times)
+- // .... : comments
+
+
+Type-in                  On the screen
+=============================================
+Hello World             cmd> Hello World$
+<space>(2)              cmd> Hello World  $
+<Ctrl-a>                cmd> $ello World  
+<space>                 cmd>  $ello World  
+YaYa                    cmd>  YaYa$ello World  
+<space>                 cmd>  YaYa $ello World  
+<del>(2)                cmd>  YaYa $lo World  
+<Backspace>(3)          cmd>  Ya$lo World  
+<enter>(2)              cmd> $
+<up arrow>              cmd> Yallo World$
+<left arrow>(6)         cmd> Yallo$World
+w                       cmd> Yallow$World
+<enter>                 cmd> $
+<up arrow>(3)           cmd> Yallo World$     // one beep
+!!                      cmd> Yallo World!!$
+<down arrow>(4)         cmd> $                // two beeps
+You may say             cmd> You may say$
+<Home>                  cmd> $ou may say
+<space>(2)              cmd>   $ou may say
+<up arrow>(2)           cmd> Yallo World$
+<Backspace>(9)          cmd> Ya$
+<enter>                 cmd> $
+// History so far:
+// "Yallo World", "Yallow World", "Ya"
+I am a dreamer          cmd> I am a dreamer$
+<space>(2)              cmd> I am a dreamer  $
+<up arrow>              cmd> Ya$
+Da                      cmd> YaDa$
+<down arrow>            cmd> I am a dreamer  $
+<up arrow>              cmd> Ya$
+<Backspace>(3)          cmd> $       // one beep
+<del>                   cmd> $       // one beep
+<space>(3)              cmd>    $
+<enter>                 cmd> $
+<up arrow>              cmd> Ya$
+<up arrow>              cmd> Yallow World$
+<down arrow>(3)         cmd> $       // one beep
+<enter>                 cmd> $
+But not                 cmd> But not$
+<space>(2)              cmd> But not  $
+<Home>                  cmd> $ut not
+<End>                   cmd> But not  $
+<left arrow>(5)         cmd> But $ot
+I'm                     cmd> But I'm$ot
+<space>                 cmd> But I'm $ot
+<enter>                 cmd> $
+<up arrow>              cmd> But I'm not$
+<space>                 cmd> But I'm not $
+the only one.           cmd> But I'm not the only one.$
+<up arrow>(2)           cmd> Yallow World$
+<del>(2)                cmd> Yallow World$   // two beeps
+<enter>                 cmd> $
+<up arrow>              cmd> Yallow World$
+<up arrow>              cmd> But I'm not$
+<up arrow>              cmd> Ya$
+...                     cmd> Ya...$
+<enter>                 cmd> $
+// History so far:
+// "Yallo World", "Yallow World", "Ya", "But I'm not",
+// "Yallow World", "Ya..."
+I hope someday          cmd> I hope someday$
+<left arrow>(8)         cmd> I hope$someday
+<tab>                   cmd> I hope  $someday
+<enter>                 cmd> $
+<tab>                   cmd>         $
+you'll join us.         cmd>         you'll join us.$
+<home>                  cmd> $       you'll join us.
+1                       cmd> 1$       you'll join us.
+<Ctrl-e>                cmd> 1        you'll join us.$
+<tab>                   cmd> 1        you'll join us.        $
+<enter>                 cmd> $
+2
+<enter>
+3
+<enter>
+4
+<enter>
+5
+<enter>
+6
+<enter>
+7
+<enter>
+8
+<enter>
+9
+<enter>
+0
+<enter>
+11
+<enter>
+12
+<enter>
+13
+<enter>
+14
+<enter>
+// History so far: 
+// "Yallo World", "Yallow World", "Ya", "But I'm not",
+// "Yallow World", "Ya...", "I hope   someday", "1        you'll join us."
+// "2", "3", "4", "5", "6", "7", "8", "9", "0", "11", "12", "13", "14"
+And the world           cmd> And the world$
+<PgUp>                  cmd> 5$
+<PgUp>                  cmd> Yallow World$
+<PgUp>                  cmd> Yallo World$
+<PgUp>                  cmd> Yallo World$      // one beep
+<PgDn>                  cmd> 4$
+<PgDn>                  cmd> 14$
+<PgDn>                  cmd> And the world$
+<PgDn>                  cmd> And the world$   // one beep
+<enter>                 cmd> $
+will live as one!       cmd> will live as one!$
+<PgUp>                  cmd> 6$
+<space>                 cmd> 6 $
+imagine                 cmd> 6 imagine$
+<enter>                 cmd> $
+<PgDn>                  cmd> $                // one beep
+<up arrow>(12)          cmd> 5$
+<PgDn>(2)               cmd> $
+<Ctrl-d>                // end the program
+
