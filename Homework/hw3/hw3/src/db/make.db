@@ -1,0 +1,6 @@
+PKGFLAG   =
+EXTHDRS   = dbJson.h
+EXTRAOBJS =
+
+include ../Makefile.in
+include ../Makefile.lib

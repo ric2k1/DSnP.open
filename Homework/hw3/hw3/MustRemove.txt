@@ -1,0 +1,17 @@
+_hw3/Makefile
+_hw3/bin
+_hw3/dofiles
+_hw3/include
+_hw3/lib
+_hw3/ref
+_hw3/src/*/*.o
+_hw3/src/Makefile.in
+_hw3/src/Makefile.lib
+_hw3/src/cmd/make.cmd
+_hw3/src/cmd/cmdCharDef.cpp
+_hw3/src/cmd/cmdCharDef.h
+_hw3/src/cmd/cmdCommon.cpp
+_hw3/src/cmd/cmdCommon.h
+_hw3/src/util
+_hw3/src/main
+_hw3/src/test

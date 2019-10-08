@@ -1,0 +1,29 @@
+dbr ../tests/test1.json
+dbp
+dbap Mary 30
+dbap Mary 30
+dbap
+dbap Larry
+dbap Larry 80 Hello
+dbap Larry XX
+dbap Larry 80
+dbp
+dbp Ric
+dbp ric
+dbav
+dbc
+dbap Ben -50
+dbp
+dbma
+dbmi
+dbsort -v
+dbp
+dbsort -v
+dbp
+dbsort -k
+dbp
+dbsort -v
+dbp
+dbsort -k
+dbp
+dbsum
