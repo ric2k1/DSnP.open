@@ -83,7 +83,7 @@ DBJson::max(size_t& idx) const
    return  maxN;
 }
 
-// If DBJson is empty, set idx to size() and return INT_MIN
+// If DBJson is empty, set idx to size() and return INT_MAX
 int
 DBJson::min(size_t& idx) const
 {
