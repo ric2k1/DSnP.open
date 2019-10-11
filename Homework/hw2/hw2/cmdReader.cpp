@@ -96,7 +96,7 @@ CmdParser::moveBufPtr(char* const ptr)
 // 3. Move the remaining string left for one character
 // 4. The cursor should stay at the same position
 // 5. Remember to update _readBufEnd accordingly.
-// 6. Don't leave the tailing character.
+// 6. Don't leave the tailing "visible" character.
 // 7. Call "moveBufPtr(...)" if needed.
 //
 // For example,
