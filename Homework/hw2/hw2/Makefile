@@ -62,8 +62,9 @@ cmdParser.h: cmdCharDef.h
 .cmdCharDef:
 	@rm -f cmdCharDef.o
 
-linux mac:
+linux18 linux16 mac:
 	@ln -sf cmdReader.o.$@ cmdReader.o.ref
+	@ln -sf cmdReader-ref.$@ cmdReader-ref
 
 clean:
 	rm -f *.o cmdReader testAsc
