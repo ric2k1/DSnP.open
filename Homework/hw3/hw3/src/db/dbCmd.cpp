@@ -60,7 +60,7 @@ DBAveCmd::exec(const string& option)
       return CMD_EXEC_ERROR;
 
    float a = dbjson.ave();
-   if (a == NAN) {
+   if (isnan(a)) {
       cerr << "Error: The average of the DB is nan." << endl;
       return CMD_EXEC_ERROR;
    }
