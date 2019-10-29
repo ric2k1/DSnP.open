@@ -1,0 +1,19 @@
+mtr 100000
+mtnew 10
+mtnew 5 -a 512
+mtp
+mtnew 5 -a 1024
+mtp
+mtnew 5 -a 256
+mtp
+mtdel -i 3
+mtp
+mtdel -i 4 -a
+mtp
+mtdel -i 8 -a
+mtp
+mtdel -i 13 -a
+mtp
+mtr 120
+mtp
+q -f

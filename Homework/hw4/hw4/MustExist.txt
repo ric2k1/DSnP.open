@@ -1,0 +1,5 @@
+_hw4/src/Makefile.lib
+_hw4/src/mem/make.mem
+_hw4/src/mem/memCmd.h
+_hw4/src/mem/memCmd.cpp
+_hw4/src/mem/memMgr.h

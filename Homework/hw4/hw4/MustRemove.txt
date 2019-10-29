@@ -1,0 +1,12 @@
+_hw4/Makefile
+_hw4/src/Makefile.in
+_hw4/src/cmd/
+_hw4/src/main/
+_hw4/src/mem/memTest.h
+_hw4/src/mem/memTest.cpp
+_hw4/src/util/
+_hw4/bin/
+_hw4/include/
+_hw4/lib/
+_hw4/ref/
+_hw4/tests/

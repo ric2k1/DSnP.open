@@ -1,0 +1,9 @@
+mtn 10
+mtn 5 -a 256
+mtn 5 -a 512
+mtd -i 7 -a
+mtd -i 0 -a
+mtp
+mtd -r 3
+mtp
+q -f

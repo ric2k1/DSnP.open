@@ -1,0 +1,23 @@
+mtr 400
+mtp
+mtn -a 2 1
+mtp
+mtn 1
+mtp
+mtn -a 2 1
+mtp
+mtn -a 1 1
+mtp
+
+mtr 300
+mtp
+mtn -a 2 1
+mtp
+mtn 1
+mtp
+mtn -a 2 1
+mtp
+mtn -a 1 1
+mtp
+
+q -f
