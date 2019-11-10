@@ -1,0 +1,34 @@
+adta -s 123
+adta -s 456
+adta -s 123
+adta -s 001
+adtp
+adtd -s 123
+adtp
+adtd -s 001
+adtp
+adtd -s 123
+adtp
+adtd -s 456
+adtp
+adtd -s 123
+adtp
+usage
+adta -s 123
+adta -s 456
+adta -s 123
+adta -s 001
+adts
+adtp
+adtd -s 123
+adtp
+adtd -s 001
+adtp
+adtd -s 123
+adtp
+adtd -s 456
+adtp
+adtd -s 123
+adtp
+usage
+q -f

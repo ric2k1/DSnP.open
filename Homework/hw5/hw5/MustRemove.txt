@@ -1,0 +1,13 @@
+_hw5/Makefile
+_hw5/lib/
+_hw5/ref/
+_hw5/src/Makefile.in
+_hw5/src/Makefile.lib
+_hw5/src/cmd/
+_hw5/src/main/
+_hw5/src/util/myGetChar.*
+_hw5/src/util/myString.*
+_hw5/src/util/myUsage.h
+_hw5/src/util/rnGen.h
+_hw5/src/util/util.*
+_hw5/tests/

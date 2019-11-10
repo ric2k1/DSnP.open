@@ -1,0 +1,10 @@
+adta -r 10000
+adtp
+adtp 9999
+adtp 10000
+adtp 0
+adtp -1
+adta -s ric
+adtq ric
+adtsort
+adtq ric
