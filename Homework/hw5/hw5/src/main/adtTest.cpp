@@ -252,7 +252,7 @@ AdtSortCmd::help() const
 // For Array/DList
 //    ADTPrint [-Reversed | (int index)]
 // For BST:
-//    ADTPrint [[-Reversed][-Vervose] | (int index)]
+//    ADTPrint [[-Reversed][-Verbose] | (int index)]
 //----------------------------------------------------------------------
 CmdExecStatus
 AdtPrintCmd::exec(const string& option)
