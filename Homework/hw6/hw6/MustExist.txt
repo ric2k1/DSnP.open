@@ -1,0 +1,5 @@
+_hw6/src/cir/cirMgr.h
+_hw6/src/cir/cirMgr.cpp
+_hw6/src/cir/cirGate.h
+_hw6/src/cir/cirGate.cpp
+_hw6/src/cir/make.cir

@@ -1,0 +1,13 @@
+_hw6/bin/
+_hw6/lib/
+_hw6/Homework_6.doc
+_hw6/Homework_6.pdf
+_hw6/Makefile
+_hw6/ref/
+_hw6/src/cmd/
+_hw6/src/main/
+_hw6/src/util/
+_hw6/src/Makefile.in
+_hw6/src/Makefile.lib
+_hw6/tests.err/
+_hw6/tests.fraig/

@@ -1,0 +1,16 @@
+aag 10 2 0 1 6
+2
+4
+6
+6 2 4
+10 1 2
+14 12 10
+16 10 6
+18 14 16
+20 14 16
+c
+AIG gate with const fanin will not be reported
+Floating/unused gates should not be strashed, fraiged, or simplifeid.
+Gates with floating fanin(s): 7
+Gates defined but not used : 9 10
+

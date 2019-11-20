@@ -1,0 +1,15 @@
+aag 7 2 0 2 3
+12
+4
+6
+12
+6 3 15
+2 12 4
+14 13 5
+i0 x
+i1 y
+o0 s
+o1 c
+c
+half adder
+PI's varID can be greater than AIG's ID
