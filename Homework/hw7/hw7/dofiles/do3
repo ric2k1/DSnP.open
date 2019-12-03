@@ -1,0 +1,13 @@
+taski 10
+taskn -r 1
+taskn -n abcde 100
+taskn -n qqqqq 8000
+taskn -n xxxxx 4000
+taskn -n xxxxx 3000
+taskn -n bbbbb 5000
+taskq -hash
+taskq -min
+taska 1234 -r 4
+taskq -heap
+taska 4321 -r 3
+taskq -min

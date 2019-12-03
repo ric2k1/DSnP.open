@@ -1,0 +1,13 @@
+_hw7/bin/
+_hw7/dofiles/
+_hw7/lib/
+_hw7/Homework_7.doc
+_hw7/Homework_7.pdf
+_hw7/Makefile
+_hw7/ref/
+_hw7/src/cmd/
+_hw7/src/main/
+_hw7/src/task/task*.o
+_hw7/src/task/task*.h
+_hw7/src/task/taskCmd.cpp
+_hw7/src/util/util*.o
