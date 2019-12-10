@@ -1,0 +1,13 @@
+aag 10 2 0 1 6
+2
+4
+6
+6 2 4
+10 1 2
+14 12 10
+16 10 6
+18 14 16
+20 14 16
+c
+Gates 9 and 10 are not in DFS list, so thay won't be merged!!
+

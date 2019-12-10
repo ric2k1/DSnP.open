@@ -1,0 +1,15 @@
+_fraig/include/
+_fraig/Makefile
+_fraig/src/util/myHashMap.h
+_fraig/src/util/myHashSet.h
+_fraig/src/cir/make.cir
+_fraig/src/cir/cirCmd.cpp
+_fraig/src/cir/cirFraig.cpp
+_fraig/src/cir/cirMgr.cpp
+_fraig/src/cir/cirSim.cpp
+_fraig/src/cir/cirCmd.h
+_fraig/src/cir/cirGate.cpp
+_fraig/src/cir/cirMgr.h
+_fraig/src/cir/cirDef.h
+_fraig/src/cir/cirGate.h
+_fraig/src/cir/cirOpt.cpp

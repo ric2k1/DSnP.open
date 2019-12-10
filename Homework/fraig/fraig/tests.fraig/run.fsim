@@ -1,0 +1,28 @@
+#! /bin/csh
+if ($#argv == 0) then
+  echo "Missing aag file. Using -- run.fsim xx (for fsimxx.aag)"; exit 1
+endif
+
+set design=sim$1.aag
+if (! -e $design) then
+   echo "$design does not exists" ; exit 1
+endif
+
+set dofile=do.fsim
+rm -f $dofile
+echo "cirr $design" > $dofile
+echo "cirp" >> $dofile
+echo "cirp -pi" >> $dofile
+echo "cirp -po" >> $dofile
+echo "cirp -n" >> $dofile
+echo "cirp -fl" >> $dofile
+echo "usage" >> $dofile
+echo "cirstrash" >> $dofile
+echo "usage" >> $dofile
+#echo "cirsim -file pattern.$1 -out .fsim$1.log" >> $dofile
+echo "cirsim -file pattern.$1" >> $dofile
+echo "usage" >> $dofile
+echo "cirp -fec" >> $dofile
+echo "usage" >> $dofile
+echo "q -f" >> $dofile
+../fraig -f $dofile

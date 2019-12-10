@@ -1,0 +1,121 @@
+#! /usr/bin/env perl
+use strict;
+
+my @stringInTar;
+my @temp;
+my $arg;
+my $arg2;
+my $command;
+my $usrID;
+my @existPatterns;
+my @removePatterns;
+my $index;
+my $success=1;
+
+#Print contant info.
+print "========================================================\n";
+print "This self-checking program is designed by Jason Chou.\n";
+print "If you have any questions, please contact class TAs or instructor.\n";
+print "All right reserved, DVLab, GIEE/EE, NTU.\n";
+print "========================================================\n\n";
+
+#Usage checking
+if(@ARGV < 1){
+	die "Usage:./SelfCheck CompressedFile\n";
+}
+
+#File I/O checking
+if(! open EXIST, "<MustExist.txt"){
+	die "Can't open the exist pattern file!!\n";
+}
+
+if(! open REMOVE, "<MustRemove.txt"){
+	die "Can't open the remove pattern file!!\n";
+}
+
+#Get the student ID
+$arg = $ARGV[0];
+print "$arg is self checking!\n";
+@temp = split /_fraig/, $arg;
+$usrID = $temp[0];
+print "StudentID:$usrID\n";
+
+$_ = $usrID;
+if(!/[a-z][0-9]{2}[a|b|1-9][0-9]{5}/){
+	die "Error: Wrong student ID format\n";
+}
+
+#Generate the patterns
+$index=0;
+while(defined($_ = <EXIST>)){
+	chomp($_);
+	$existPatterns[$index] = $usrID . $_;
+	$index++;
+}
+
+$index=0;
+while(defined($_ = <REMOVE>)){
+	chomp($_);
+	$removePatterns[$index] = $usrID . $_;
+	$index++;
+}
+
+$command = "tar ". "-zvtf". $arg;
+@stringInTar = `$command`;
+
+foreach $arg2 (@existPatterns){
+	if(&checkExist($arg2)==0){
+		$success=0;
+		print "Error: Missing file $arg2 in your compressed file.\n";
+	}
+}
+
+foreach $arg2 (@removePatterns){
+	if(&checkRemove($arg2)==1){
+		$success=0;
+		print "Error: File $arg2 in your compressed file must remove.\n";
+	}
+}
+
+if($success==1){
+	print "Succeeded in self checking\n";
+}
+else{
+	print "Failed in self checking\n";
+}
+
+sub checkExist{
+	my($flag,$index,$arg2,@pathInTar);
+	$flag=0;#pattern is not found
+	foreach $arg2(@stringInTar){
+		@pathInTar = split(/[ \t]+/, $arg2);
+		if($pathInTar[$#pathInTar] =~ m/^$_[0]$/){
+			$flag=1;#pattern is found
+		}
+        else {
+           if($#pathInTar > 1 && $pathInTar[$#pathInTar-1] =~ m/->/ && $pathInTar[$#pathInTar-2] =~ m/^$_[0]$/){
+              $flag=1;#pattern is found  (symbolic link file support)
+           }
+        }
+	}
+	$flag;
+}
+
+sub checkRemove{
+	my($flag,$index,$arg2,@pathInTar);
+	$flag=0;#pattern is not found
+	foreach $arg2(@stringInTar){
+		@pathInTar = split(/[ \t]+/, $arg2);
+		$index = index($arg2, $_[0]);
+		if($pathInTar[$#pathInTar] =~ m/^$_[0]$/){
+			$flag=1;#pattern is found
+		}
+        else {
+           if($#pathInTar > 1 && $pathInTar[$#pathInTar-1] =~ m/->/ && $pathInTar[$#pathInTar-2] =~ m/^$_[0]$/){
+              $flag=1;#pattern is found  (symbolic link file support)
+           }
+        }
+	}
+	$flag;
+}
+
