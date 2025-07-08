@@ -1,7 +1,7 @@
 all: test.out check_compiler
 
 test.out:
-	@g++ -std=c++11 test.cpp -o test.out
+	@g++ -std=c++17 test.cpp -o test.out
 	@echo "Compile success!!"
 	@./test.out
 	@rm -rf ./test.out

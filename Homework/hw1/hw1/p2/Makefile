@@ -1,5 +1,5 @@
-CFLAGS = -O3 -Wall -std=c++11
-CFLAGS = -g -Wall -std=c++11
+CFLAGS = -O3 -Wall -std=c++17
+CFLAGS = -g -Wall -std=c++17
 
 p2Run: p2Main.o p2Json.o
 	g++ -o $@ p2Main.o p2Json.o $(CFLAGS)
