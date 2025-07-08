@@ -1,0 +1,279 @@
+# =============================================================================
+# LLVM Coding Standards Enforcement
+# =============================================================================
+# These files MUST be tracked to ensure consistent coding standards across platforms
+# DO NOT ignore these files - they are essential for the project
+!.clang-format
+!.clang-tidy
+!scripts/check-style.sh
+!scripts/auto-check.sh
+!scripts/setup-vscode.sh
+!scripts/setup-hooks.sh
+!scripts/pre-commit
+
+# =============================================================================
+# Platform-specific files to ignore
+# =============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Editor and IDE files (platform-agnostic)
+# =============================================================================
+
+# VS Code (keep workspace settings but ignore user-specific settings)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/extensions.json
+.vscode/c_cpp_properties.json
+.vscode/*.log
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim/Neovim
+*.swp
+*.swo
+*~
+.vim/
+.vimrc.local
+.nvim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# =============================================================================
+# Build artifacts (platform-agnostic)
+# =============================================================================
+
+# Object files
+*.o
+*.obj
+
+# Libraries
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# =============================================================================
+# Compilation artifacts
+# =============================================================================
+
+# GCC/Clang
+*.gcno
+*.gcda
+*.gcov
+
+# Make
+*.d
+.deps/
+.depend
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# =============================================================================
+# Temporary and backup files
+# =============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+
+# =============================================================================
+# Project-specific ignores
+# =============================================================================
+
+# Build directories
+build/
+bin/
+obj/
+dist/
+target/
+
+# Test outputs
+test-results/
+coverage/
+*.gcov
+
+# Documentation builds
+docs/_build/
+docs/build/
+
+# =============================================================================
+# Package managers
+# =============================================================================
+
+# Node.js (if any build tools use it)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if any build tools use it)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =============================================================================
+# Security and sensitive files
+# =============================================================================
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# SSH keys
+id_rsa
+id_rsa.pub
+
+# =============================================================================
+# LLVM Tools temporary files (keep these ignored)
+# =============================================================================
+
+# Clang tools temporary files
+.clang-format-ignore
+.clang-tidy-ignore
+
+# =============================================================================
+# IMPORTANT: Files that MUST be tracked for LLVM standards enforcement
+# =============================================================================
+# These files are essential for maintaining coding standards across all platforms
+# and should NEVER be ignored:
+
+# Core LLVM configuration files (tracked)
+!.clang-format
+!.clang-tidy
+!.editorconfig
+
+# Scripts for enforcing standards (tracked)
+!scripts/
+!scripts/*.sh
+!scripts/*.py
+
+# Documentation for standards (tracked)
+!*.md
+!README*
+!INSTALL*
+!STYLE*
+!LLVM_CODING_STANDARDS.md
+!VSCODE_AUTO_CHECK.md
+!README_VSCODE_AUTO_CHECK.md
+
+# =============================================================================
+# Platform-specific build artifacts
+# =============================================================================
+
+# macOS specific
+*.app/
+*.dmg
+
+# Linux specific
+*.deb
+*.rpm
+*.tar.gz
+
+# =============================================================================
+# Development tools
+# =============================================================================
+
+# Valgrind
+valgrind-out.txt
+
+# GDB
+.gdb_history
+
+# LLDB
+.lldbinit 
+
+# =============================================================================
+# Homework-specific ignores
+# =============================================================================
+
+# Compressed homework packages
+*.tgz
+
+# Reference executables (platform-specific)
+hw1/hw1/p2/ref/
+
+# Demonstration files
+hw1/hw1/p2/cpp17_demo*
+
+# Solutions
+sol/
+
+# Specific executable names from homework
+hw1/hw1/p2/p2Run
+hw1/hw1/p2/jsonGen/jgen
+hw2/hw2/cmdReader
+hw2/hw2/cmdReader-ref.mac
+hw2/hw2/testAsc
