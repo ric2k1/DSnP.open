@@ -5,70 +5,74 @@
   Author       [ Chung-Yang (Ric) Huang ]
   Copyright    [ Copyleft(c) 2007-present LaDs(III), GIEE, NTU, Taiwan ]
 ****************************************************************************/
-#include <string.h>
-#include <cstdlib>
-#include <cassert>
 #include "cmdParser.h"
 
-using namespace std;
+#include <cassert>
+#include <cctype>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
 
-static void
-usage()
+namespace
 {
-   cout << "Usage: cmdReader [ -File < doFile > ]" << endl;
+void usage()
+{
+    std::cout << "Usage: cmdReader [ -File < doFile > ]\n";
 }
 
-static void
-myexit()
+void myexit()
 {
-   usage();
-   exit(-1);
+    usage();
+    std::exit(EXIT_FAILURE);
 }
 
-static int
-myStrNCmp(const string& s1, const string& s2, unsigned n)
+int myStrNCmp(const std::string &str1, const std::string &str2, unsigned length)
 {
-   assert(n > 0);
-   unsigned n2 = s2.size();
-   if (n2 == 0) return -1;
-   unsigned n1 = s1.size();
-   assert(n1 >= n);
-   for (unsigned i = 0; i < n1; ++i) {
-      if (i == n2)
-         return (i < n)? 1 : 0;
-      char ch1 = (isupper(s1[i]))? tolower(s1[i]) : s1[i];
-      char ch2 = (isupper(s2[i]))? tolower(s2[i]) : s2[i];
-      if (ch1 != ch2)
-         return (ch1 - ch2);
-   }
-   return (n1 - n2);
+    assert(length > 0);
+    const unsigned length2 = str2.size();
+    if (length2 == 0)
+        return -1;
+    const unsigned length1 = str1.size();
+    assert(length1 >= length);
+    for (unsigned i = 0; i < length1; ++i) {
+        if (i == length2)
+            return (i < length) ? 1 : 0;
+        const char ch1 =
+            (std::isupper(str1[i])) ? std::tolower(str1[i]) : str1[i];
+        const char ch2 =
+            (std::isupper(str2[i])) ? std::tolower(str2[i]) : str2[i];
+        if (ch1 != ch2)
+            return (ch1 - ch2);
+    }
+    return (length1 - length2);
 }
+}  // anonymous namespace
 
-int
-main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-   CmdParser cmd;
-   ifstream dof;
+    CmdParser cmd;
 
-   if (argc == 3) {  // -File <doFile>
-      if (myStrNCmp("-File", argv[1], 2) == 0) {
-         if (!cmd.openDofile(argv[2])) {
-            cerr << "Error: cannot open file \"" << argv[2] << "\"!!\n";
+    if (argc == 3) {  // -File <doFile>
+        if (myStrNCmp("-File", argv[1], 2) == 0) {
+            if (!cmd.openDofile(argv[2])) {
+                std::cerr << "Error: cannot open file \"" << argv[2]
+                          << "\"!!\n";
+                myexit();
+            }
+        }
+        else {
+            std::cerr << "Error: unknown argument \"" << argv[1] << "\"!!\n";
             myexit();
-         }
-      }
-      else {
-         cerr << "Error: unknown argument \"" << argv[1] << "\"!!\n";
-         myexit();
-      }
-   }
-   else if (argc != 1) {
-      cerr << "Error: illegal number of argument (" << argc << ")!!\n";
-      myexit();
-   }
+        }
+    }
+    else if (argc != 1) {
+        std::cerr << "Error: illegal number of argument (" << argc << ")!!\n";
+        myexit();
+    }
 
-   cmd.readCmd();  // press "Ctrl-d" to break
-   cout << endl;  // a blank line between each command
+    cmd.readCmd();      // press "Ctrl-d" to break
+    std::cout << '\n';  // a blank line between each command
 
-   return 0;
+    return 0;
 }

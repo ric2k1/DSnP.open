@@ -1,56 +1,74 @@
 /****************************************************************************
   FileName     [ testAsc.cpp ]
-  PackageName  [ N/A ]
-  Synopsis     [ To test your keyboard mapping ]
+  PackageName  [ test ]
+  Synopsis     [ Test ASCII code ]
   Author       [ Chung-Yang (Ric) Huang ]
   Copyright    [ Copyleft(c) 2007-present LaDs(III), GIEE, NTU, Taiwan ]
 ****************************************************************************/
-#include <iostream>
-#include <iomanip>
-#include <cassert>
 #include "cmdCharDef.h"
 
-using namespace std;
+#include <iostream>
 
-//----------------------------------------------------------------------
-//    External funcitons
-//----------------------------------------------------------------------
-void mybeep();
-char mygetc(istream&);
-ParseChar getChar(istream&);
-
-//----------------------------------------------------------------------
-//    Global static funcitons
-//----------------------------------------------------------------------
 int main()
 {
-   char ch;
-   cout << "Press \"Ctrl-d\" to quit" << endl;
-   while (1) {
-      ParseChar pch = getChar(cin);
-      if (pch == INPUT_END_KEY) {
-         cout << "Input end" << endl;
-         break;
-      }
-      switch (pch) {
-         case LINE_BEGIN_KEY: cout << "Line begin" << endl; break;
-         case LINE_END_KEY:   cout << "Line end" << endl; break;
-         case HOME_KEY:       cout << "Home key" << endl; break;
-         case END_KEY:        cout << "End key" << endl; break;
-         case BACK_SPACE_KEY: cout << "Backspace" << endl; break;
-         case DELETE_KEY:     cout << "Delete" << endl; break;
-         case INSERT_KEY:     cout << "Insert" << endl; break;
-         case NEWLINE_KEY:    cout << "New line" << endl; break;
-         case TAB_KEY:        cout << "Tab key" << endl; break;
-         case ARROW_UP_KEY:   cout << "Arrow up" << endl; break;
-         case ARROW_DOWN_KEY: cout << "Arrow down" << endl; break;
-         case ARROW_RIGHT_KEY:cout << "Arrow right" << endl; break;
-         case ARROW_LEFT_KEY: cout << "Arrow left" << endl; break;
-         case PG_UP_KEY:      cout << "Page up" << endl; break;
-         case PG_DOWN_KEY:    cout << "Page down" << endl; break;
-         case UNDEFINED_KEY:  cout << "<Undefined>!!" << endl; mybeep(); break;
-         default:             cout << char(pch) << endl; break;
-                              // printable character
-      }
-   }
+    std::cout << "Press \"Ctrl-d\" to quit\n";
+    while (true) {
+        const ParseChar parseChar = getChar(std::cin);
+        if (parseChar == INPUT_END_KEY) {
+            std::cout << "Input end\n";
+            break;
+        }
+        if (parseChar == LINE_BEGIN_KEY) {
+            std::cout << "Line begin\n";
+        }
+        else if (parseChar == LINE_END_KEY) {
+            std::cout << "Line end\n";
+        }
+        else if (parseChar == HOME_KEY) {
+            std::cout << "Home key\n";
+        }
+        else if (parseChar == END_KEY) {
+            std::cout << "End key\n";
+        }
+        else if (parseChar == BACK_SPACE_KEY) {
+            std::cout << "Backspace\n";
+        }
+        else if (parseChar == DELETE_KEY) {
+            std::cout << "Delete\n";
+        }
+        else if (parseChar == INSERT_KEY) {
+            std::cout << "Insert\n";
+        }
+        else if (parseChar == NEWLINE_KEY) {
+            std::cout << "New line\n";
+        }
+        else if (parseChar == TAB_KEY) {
+            std::cout << "Tab key\n";
+        }
+        else if (parseChar == ARROW_UP_KEY) {
+            std::cout << "Arrow up\n";
+        }
+        else if (parseChar == ARROW_DOWN_KEY) {
+            std::cout << "Arrow down\n";
+        }
+        else if (parseChar == ARROW_RIGHT_KEY) {
+            std::cout << "Arrow right\n";
+        }
+        else if (parseChar == ARROW_LEFT_KEY) {
+            std::cout << "Arrow left\n";
+        }
+        else if (parseChar == PG_UP_KEY) {
+            std::cout << "Page up\n";
+        }
+        else if (parseChar == PG_DOWN_KEY) {
+            std::cout << "Page down\n";
+        }
+        else if (parseChar == UNDEFINED_KEY) {
+            std::cout << "<Undefined>!!\n";
+        }
+        else {
+            std::cout << static_cast<char>(parseChar) << '\n';
+        }
+    }
+    return 0;
 }
